@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Readable Now",
+  "description": "Changes font style for the desired page. No more Times New Roman 8 px!",
+  "version": "0.2",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Options"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://*/",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "/injected.js"
+  ],
+   "content_scripts": [
+    {
+      "matches": [
+        "http://*/"
+       ],
+      "js": [ "/injected.js" ],
+      "all_frames": true
+    }
+  ]
+}

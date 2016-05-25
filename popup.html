@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Readable Now</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        font-family: Arial;
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+        width: 300px;
+      }
+
+      #click {
+
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="status">Set up your style</div>
+    <select id="font">
+      <option value="Arial">Arial</option>
+      <option value="Calibri">Calibri</option>
+      <option value="Verdana">Verdana</option>
+    </select>
+    <select id="size">
+      <option value="8px">8</option>
+      <option value="10px">10</option>
+      <option value="11px">11</option>
+      <option value="12px">12</option>
+    </select>
+    <select id="color">
+      <option value="black">Black</option>
+      <option value="white">White</option>
+      <option value="#333">Grey</option>
+    </select>
+    <button type="button" id="click">Go!</button>
+    <button type="button" id="stop">Stop</button>
+    <img id="image-result">
+    <!-- hidden -->
+    <script type="text/javascript" src="background.js"></script>
+  </body>
+</html>
+
